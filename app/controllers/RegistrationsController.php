@@ -7,9 +7,19 @@ class RegistrationsController extends BaseController {
         return View::make('registrations.regClient');
     }
 
-    public function outPatientVisit() {
+    public function regANC() {
 
-        return View::make('patients.outPatientVisit');
+        return View::make('registrations.regANC');
+    }
+    
+    public function regCWC() {
+
+        return View::make('registrations.regCWC');
+    }
+    
+    public function editClient() {
+
+        return View::make('registrations.editClient');
     }
     
 

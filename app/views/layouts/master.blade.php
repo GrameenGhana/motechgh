@@ -8,6 +8,7 @@
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         {{ HTML::style('css/bootstrap.min.css'); }} 
+        {{ HTML::style('css/bootstrap-select.css'); }} 
         <!-- font Awesome -->
         {{ HTML::style('css/font-awesome.min.css'); }} 
         <!-- Ionicons -->
@@ -115,9 +116,9 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li class="{{ Request::is('regs/regClient') ? 'active' : '' }}"><a href="{{ URL::to('regs/regClient') }}"><i class="fa fa-users"></i>Register Client</a></li>
-                                <li class="{{ Request::is('regs/*') ? 'active' : '' }}"><a href="{{ URL::to('regs') }}"><i class="fa fa-users"></i>Register ANC</a></li>
-                                <li class="{{ Request::is('regs/*') ? 'active' : '' }}"><a href="{{ URL::to('regs') }}"><i class="fa fa-users"></i>Register CWC</a></li>
-                                <li class="{{ Request::is('regs/*') ? 'active' : '' }}"><a href="{{ URL::to('regs') }}"><i class="fa fa-users"></i>Edit Client</a></li>
+                                <li class="{{ Request::is('regs/regANC') ? 'active' : '' }}"><a href="{{ URL::to('regs/regANC') }}"><i class="fa fa-users"></i>Register ANC</a></li>
+                                <li class="{{ Request::is('regs/regCWC') ? 'active' : '' }}"><a href="{{ URL::to('regs/regCWC') }}"><i class="fa fa-users"></i>Register CWC</a></li>
+                                <li class="{{ Request::is('regs/editClient') ? 'active' : '' }}"><a href="{{ URL::to('regs/editClient') }}"><i class="fa fa-users"></i>Edit Client</a></li>
                             </ul>
                             
                         </li>
@@ -131,14 +132,14 @@
                                 <li class="{{ Request::is('patients/outPatientVisit') ? 'active' : '' }}"><a href="{{ URL::to('patients/outPatientVisit') }}"><i class="fa fa-users"></i>Outpatient Visit</a></li>
                                 <li class="{{ Request::is('patients/ANCVisit') ? 'active' : '' }}"><a href="{{ URL::to('patients/ANCVisit') }}"><i class="fa fa-users"></i>ANC Visit</a></li>
                                 <li class="{{ Request::is('patients/CWCVisit') ? 'active' : '' }}"><a href="{{ URL::to('patients/CWCVisit') }}"><i class="fa fa-users"></i>CWC Visit</a></li>
-                                <li class="{{ Request::is('subs/*') ? 'active' : '' }}"><a href="{{ URL::to('subs') }}"><i class="fa fa-users"></i>Delivery</a></li>
-                                <li class="{{ Request::is('subs/*') ? 'active' : '' }}"><a href="{{ URL::to('subs') }}"><i class="fa fa-users"></i>Delivery Notification</a></li>
-                                <li class="{{ Request::is('subs/*') ? 'active' : '' }}"><a href="{{ URL::to('subs') }}"><i class="fa fa-users"></i>PNC(baby)</a></li>
-                                <li class="{{ Request::is('subs/*') ? 'active' : '' }}"><a href="{{ URL::to('subs') }}"><i class="fa fa-users"></i>PNC (mother)</a></li>
-                                <li class="{{ Request::is('subs/*') ? 'active' : '' }}"><a href="{{ URL::to('subs') }}"><i class="fa fa-users"></i>Case History</a></li>
-                                <li class="{{ Request::is('subs/*') ? 'active' : '' }}"><a href="{{ URL::to('subs') }}"><i class="fa fa-users"></i>TT Non-Pregnant</a></li>
-                                <li class="{{ Request::is('subs/*') ? 'active' : '' }}"><a href="{{ URL::to('subs') }}"><i class="fa fa-users"></i>Pregnancy Termination</a></li>
-                                <li class="{{ Request::is('subs/*') ? 'active' : '' }}"><a href="{{ URL::to('subs') }}"><i class="fa fa-users"></i>Client Death</a></li>
+                                <li class="{{ Request::is('patients/delivery') ? 'active' : '' }}"><a href="{{ URL::to('patients/delivery') }}"><i class="fa fa-users"></i>Delivery</a></li>
+                                <li class="{{ Request::is('patients/deliveryNotification') ? 'active' : '' }}"><a href="{{ URL::to('patients/deliveryNotification') }}"><i class="fa fa-users"></i>Delivery Notification</a></li>
+                                <li class="{{ Request::is('patients/PNCBaby') ? 'active' : '' }}"><a href="{{ URL::to('patients/PNCBaby') }}"><i class="fa fa-users"></i>PNC(baby)</a></li>
+                                <li class="{{ Request::is('patients/PNCMother') ? 'active' : '' }}"><a href="{{ URL::to('patients/PNCMother') }}"><i class="fa fa-users"></i>PNC (mother)</a></li>
+                                <li class="{{ Request::is('patients/caseHistory') ? 'active' : '' }}"><a href="{{ URL::to('patients/caseHistory') }}"><i class="fa fa-users"></i>Case History</a></li>
+                                <li class="{{ Request::is('patients/TTNonPregnant') ? 'active' : '' }}"><a href="{{ URL::to('patients/TTNonPregnant') }}"><i class="fa fa-users"></i>TT Non-Pregnant</a></li>
+                                <li class="{{ Request::is('patients/pregTermination') ? 'active' : '' }}"><a href="{{ URL::to('patients/pregTermination') }}"><i class="fa fa-users"></i>Pregnancy Termination</a></li>
+                                <li class="{{ Request::is('patients/clientDeath') ? 'active' : '' }}"><a href="{{ URL::to('patients/clientDeath') }}"><i class="fa fa-users"></i>Client Death</a></li>
                                 
                             </ul>
                             
@@ -181,6 +182,7 @@
         {{ HTML::script('js/jquery-ui-1.10.3.min.js'); }}
         <!-- Bootstrap -->
         {{ HTML::script('js/bootstrap.min.js'); }}
+        {{ HTML::script('js/bootstrap-select.js'); }}
         <!-- Morris.js charts -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         {{ HTML::script('js/plugins/morris/morris.min.js'); }}
